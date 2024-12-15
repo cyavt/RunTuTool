@@ -1,2 +1,10 @@
+```
+#################################
+#### BY NGUYỄN VĂN TRÚC (CYA) ###
+#################################
+#python3.9
+# >_& Linux: 23:57 09-2022
+```
 # Python 3.9
+# pyinstaller --onefile --windowed --add-data "icon.ico;." key.py
 # Tool gì thì tự hiểu nhé :D

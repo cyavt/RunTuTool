@@ -3,7 +3,8 @@
 #################################
 #python3.9
 # >_& Linux: 23:57 09-2022
-
+import sys
+import os
 from bs4 import BeautifulSoup
 import threading
 import time
@@ -239,10 +240,15 @@ def main():
     def Main_display():
         global console_text, submit_button, stop_button, entry_file_path, entry_username, entry_password, entry_timeOutDK, entry_timeOutLogin, entry_name, entry_cmtPath, entry_loginPath, entry_ip, selected_option, app, entry_mdk
 
+        if getattr(sys, 'frozen', False):
+            icon_path = os.path.join(sys._MEIPASS, 'icon.ico')
+        else:
+            icon_path = 'icon.ico'
+
         # Create the main window
         app = tk.Tk()
         app.title("Auto TC")
-        app.iconbitmap(r'assets/icon.ico')
+        app.iconbitmap(icon_path)
         # app.option_add("*Font", ("Inconsolata", 10, "bold"))
 
         # app.geometry('0+10+10')

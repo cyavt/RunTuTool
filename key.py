@@ -3,7 +3,8 @@
 #################################
 #python3.9
 # >_& Linux: 23:57 09-2022
-
+import sys
+import os
 import json
 import tkinter as tk
 from tkinter import ttk, messagebox
@@ -29,7 +30,7 @@ def check_key():
         messagebox.showerror("Lỗi", "Sai key rồi :((.")
 
 def show_success_message(user_name):
-    message = f"Đăng nhập thành công!\nXin Chào: {user_name}"
+    message = f"Chạy được rồi nè hihi!\nXin Chào: {user_name}"
     messagebox.showinfo("Thành công", message)
     app.destroy()
     run_auto_program()
@@ -52,9 +53,14 @@ def get_data_from_url(url):
 
 data = get_data_from_url("https://cyavt.github.io/autoKey/key.json")
 
+if getattr(sys, 'frozen', False):
+    icon_path = os.path.join(sys._MEIPASS, 'icon.ico')
+else:
+    icon_path = 'icon.ico'
+
 app = tk.Tk()
-app.title("KIỂM TRA KEY")
-app.iconbitmap(r'assets/icon.ico')
+app.title("Xác thực")
+app.iconbitmap(icon_path)
 app.geometry('400x200')
 
 # Tạo và định dạng widget
